@@ -1,140 +1,470 @@
-![image](./images/popcorn.jpg)
 
-# Current Movie Industry Analysis
+# AVIATION RISK ANALYSIS: IDENTIFYING LOW-RISK AIRCRAFT FOR BUSINESS EXPANSION
+## **Author:** Ian Bett
+***
 
-**Author**: Diane Tunnicliffe
 
 ## Overview
 
-I have been tasked with assisting Microsoft in their venture into the movie industry. My goal was to explore what type of films are currently doing the best at the box office and to provide these findings to Microsoft's new movie studio executives. My analysis of the movie industry, achieved by garnering data and utilizing descriptive statistics and visualizations, has shown that a larger budget is correlated with a higher worldwide box office gross. By allocating 75 million to 200 million dollars to produce an animated musical movie released in June or November, or allocating 200 to 400 million dollars to produce a live action super hero movie released in April or May, the data shows that a movie studio will be extremely likely to succeed. I have also given recommendations as to which composers should be hired for an animated musical movie, and which directors should be hired for a super hero movie. Microsoft can use this report to target their production budget, genre, creative type, production method, release-time, and crew members of their upcoming movie endeavors to generate the highest amount of revenue possible.
+The aviation industry presents significant opportunities for business expansion, but it also comes with inherent risks. This project aims to provide actionable insights into aircraft safety to guide informed decisions for investing in commercial and private aviation. Using a dataset from the National Transportation Safety Board (NTSB), which includes detailed records of aviation accidents, I analyzed key factors such as aircraft make, model, engine type, number of engines and weather conditions. By leveraging statistical methods and data visualizations, we identified trends and risk factors associated with different aircraft types. Our findings offers data-driven recommendations to minimize risk and optimize investment decisions, focusing on the safest and most reliable aircraft makes and models.
+
 
 ## Business Problem
 
-I have been informed that Microsoft wants a piece of the multi-billion dollar movie-making industry, but that they are unsure of where to begin. The challenge for their new movie studio is that they are ready to jump into the industry but do not have the necessary knowledge to move forward. To assist them with this goal, I have been looking at the movies that performed highest in worldwide box office amounts for the past ten years. By analyzing the movies that have been most successful recently, I can make recommendations about attributes that Microsoft's movies should have in order to achieve the highest revenue. I have based my analysis on four main factors:
 
-* Movie Type (Genre/Creative Type/Production Method): What types of movie content are currently most successful?
-* Release Month: When is the most lucrative time of year to release a movie?
-* Production Budget: What budget amount tends to achieve the highest box office gross?
-* Additional Attributes: Based on these findings, what else do top-grossing movies have in common?
-I chose these questions after considering the business problem and combing through the data I obtained. I have determined that the answers to these questions are integral to the steps that should be taken when considering how to produce the most profitable movie in today's world.
+My company is expanding into the aviation industry to diversify its portfolio. The goal is to identify the safest and lowest-risk aircraft for both commercial and private operations. The aviation industry carries significant safety risks, and understanding the patterns and causes of accidents is critical to making informed decisions about which aircraft to purchase. This analysis will help the company reduce risks and ensure a successful entry into the new industry.
 
-## Data
+#### Business Pain Points
+- **Safety Concerns**: Aviation accidents can result in significant financial losses and damage to reputation. The company needs to minimize the risk of accidents by selecting reliable and safe aircraft.
+- **Knowledge Gap**: The company lacks expertise in evaluating aircraft safety and understanding which factors contribute to higher accident risks.
+- **Decision Support**: Without data-driven insights, choosing the right aircraft could be a costly and risky endeavor.
 
-I utilized three different data sources for my analysis in order to have the most comprehensive view of the industry as it currently is.
+#### Data Analysis Questions
+The following questions were chosen to address the business's needs:
+1. **Which aircraft makes and models have the highest and lowest accident counts?**
+   - Helps identify safer aircraft and avoid those with a history of frequent accidents.
+2. **What are the patterns of accidents based on engine type and number of engines?**
+   - Provides insights into the reliability of different engine configurations and helps assess risks associated with specific aircraft types.
+3. **How do meteorological conditions (VMC vs. IMC) impact accident counts?**
+   - Helps evaluate risks related to operating conditions and aids in planning operational strategies.
+4. **Which aircraft make or model is associated with the most or least severe outcomes, such as fatalities or serious injuries?**
+   - Identifies aircraft with better safety.
 
-* OpusData Movie Data: a free dataset available upon request for academic research, comprised of 1,900 movies with a production year from 2006 to 2018, with a production budget greater than or equal to ten million dollars. This dataset contains values for movie name, production budget, domestic and international gross, genre, production method, runtime, and movie board rating.
-* Web-scraped data from The-Numbers.com: The Numbers is described as "the premier provider of movie industry data and research services". This website contains domestic, international, and worldwide box office revenue amounts per movie, and allows filtering and ordering of results based on many different criteria. Some of the criteria provided on this site that I found especially useful were the same criteria listed above: title, production budget, domestic and international gross, genre, and production method, in addition to release date and worldwide gross. For the purposes of this project, I generated and scraped reports for the top 100 movies per year, in terms of revenue, from 2010 to 2020.
-* The Movie Database (TMDb) API: The Movie Database is a popular database for movies and TV shows. Their API is a system made freely available for data acquisition. There is a very large amount of data available on TMDb; for the purposes of this project, I used it mainly to fill in missing information from my other two datasets as I moved through my analysis.
+#### Importance to the Business
+Answering these questions is critical for making informed decisions about aircraft purchases. By understanding accident trends and identifying low-risk aircraft:
+- The company can mitigate potential losses and liabilities.
+- It ensures better operational safety and reliability.
+- The findings can shape future policies, such as pilot training or maintenance schedules, based on aircraft-specific risks.
 
-## Methods
-
-I imported data from reputable sources, then I removed unnecessary data such as duplicates and irrelevant columns. I filled null values via API calls when appropriate. I utilized descriptive statistics as well as visualizations to illuminate trends in the data and isolate key factors for making a successful movie. This approach was appropriate for analyzing trends in the movie industry and common attributes of high-grossing movies, so that I could make informed recommendations.
-
-## Results
-
-![graph](./images/fig3.png)
-
-The highest-grossing genre was Musical.   
-
-
-![graph](./images/fig4.png)
-
-Out of the top Musical movies, 4 out of 5 were animated children's fiction movies released in November.  
-
-
-![graph](./images/fig7.png)
-
-The highest-grossing creative type was super hero.  
-
-
-![graph](./images/fig8.png)
-
-Out of the top super hero movies, 6 out of 7 were animation/live action and released in April or May.  
-
-
-![graph](./images/fig10.png)
-
-The highest-grossing production methods were animation/live action and digital animation.  
-
-
-![graph](./images/fig11.png)
-
-By prioritizing the category of animated movies as a whole, we can include animated musical movies without missing out on important high-grossing attributes.  
-
-
-![graph](./images/fig14.png)
-
-The best month to release a movie varies greatly depending on the type of movie. For super hero movies, April and May are best. For animated movies, June and November are optimal.  
-
-
-![graph](./images/fig22.png)
-
-The box office gross tends to increase as the production budget increases. For animated movies, the budget should be between 75 and 200 million dollars.  
-
-
-![graph](./images/fig23.png)
-
-For super hero movies, the budget should be between 200 and 400 million dollars.  
-
-
-
-The results of my complete analysis were as follows:
-* The genre with the highest gross for the past ten years was Musical genre.
-* The creative type with the highest gross for the past ten years was Super Hero movies.
-* The highest-grossing production method was digital animation. 
-* The musical and animation factors should be combined to achieve the highest gross. (For instance, box office hits such as Frozen and Frozen II.)
-* The release month with the highest gross is dependent on the type of movie being released. For animated movies, the optimal release months are June and November. For super hero movies, the optimal release months are April and May.
-* The worldwide gross tends to increase as production budget increases. For animated movies, a high production budget would be one between 75 and 200 million dollars, which has been proven to lead to the highest box office gross. For super hero movies, a high production budget would be one between 200 and 400 million dollars. Movies that had budgets in this range include the very successful Avengers movies, as well as other Marvel movies. 
-* Some additional attributes of successful movies are successsful directors for super hero movies and successful composers for animated musical movies. I utilized the TMDb API to generate a list of the highest-grossing people for each of these categories.
-
-<i>Please see full Jupyter notebook for complete analysis, results, and visualizations. These two visualizations below provide only a snapshot of the many factors analyzed as a composite; but there is a full breakdown in my complete analysis. </i>
-
-![graph](./images/fig24.png)
-
-![graph](./images/fig25.png)
-
-
-I am confident that the results I extrapolated from this analysis would generalize beyond the data that I have, with the exception of this year and next year due to the COVID-19 pandemic. By looking at the data up until this year, the trends and correlations I found were true for the past ten years, so I am confident that they will again be true once the world returns to some semblance of normalcy.
-
-If the recommendations that I made are put to use, I am confident that Microsoft will have a successful break into the movie-making industry. From the data, it is clear that all the attributes I have discussed are correlated with high worldwide box office gross, which is exactly what Microsoft will want for their first movies and beyond.
+These insights provide the foundation for data-driven recommendations that align with the company’s goal of entering the aviation industry successfully and safely.
 
 
 
 
+## Data Understanding
+
+#### Data Source
+The dataset used for this project was sourced from [Kaggle](https://www.kaggle.com/datasets/khsamaha/aviation-accident-database-synopses). It contains detailed information about aviation accidents, which is critical for analyzing risks associated with different aircraft types.
+
+#### Data Representation
+The data represent aviation accident records, primarily including information about aircraft make, model, engine type, number of engines, and accident outcomes such as injuries and fatalities. 
+
+Key variables included in the dataset are:
+- **Make and Model**: Specifies the manufacturer and model of the aircraft.
+- **Injury Severity**: Indicates whether the accident resulted in to fatal or unfatal injuries.
+- **Total Fatal Injuries**: The number of fatalities per accident.
+- **Total Serious Injuries**: The number of serious injuries per accident.
+- **Meteorological Conditions**: Specifies whether the accident occurred under Visual Meteorological Conditions (VMC) or Instrument Meteorological Conditions (IMC).
+- **Engine Type**: Type of engine powering the aircraft (e.g., Reciprocating, Turbo Shaft, Turbo Prop, Turbo Fan).
+- **Number of Engines**: The number of engines on the aircraft.
+
+#### Target Variable
+The target variable for this analysis is the **"Total fatal injuries"** column, which represents the total number of fatalities in an accident. This variable is crucial for identifying high-risk aircraft and assessing safety.
+
+#### Variable Properties
+The key variables intended for use have the following properties:
+- **Categorical Variables**:
+  - `investigation type`: We'll focus on accidents only rather than incidents.
+  - `make & model`: Combines aircraft make and model for detailed analysis.
+  - `engine type`: Identifies the type of engine powering the aircraft.
+  - `number of engines`: Categorizes aircraft by the number of engines.
+  - `injury severity`: Classifies accidents based on injury outcomes.
+- **Numerical Variables**:
+  - `Total fatal injuries`: Represents the total number of fatalities.
+  - `Total serious injuries`: Represents the total number of serious injuries.
+  
+
+
+
+## Data Analysis
+
+  
+To address these questions I had posed at the onset of this project, various charts and graphs were used to uncover patterns and provide actionable insights:  
+
+1. **Line Charts**:  
+   - **Trends in Accidents Over Time**: Visualized the number of accidents from 1948 to 2022, revealing historical trends and changes in safety.  
+
+2. **Bar Charts**:  
+   - **Accident Severity**: Compared the total counts of fatal and non-fatal injuries over the years, offering a clear picture of accident outcomes.  
+   - **Accident Counts by Aircraft Make and Model**: Identified aircraft makes and models with the highest and lowest accident counts to guide risk assessments.  
+   - **Accident Patterns by Engine Type and Number of Engines**: Explored the relationship between engine configurations and accident frequency, shedding light on aircraft reliability.  
+   - **Accident Counts by Meteorological Conditions**: Highlighted differences in accident rates under Visual Meteorological Conditions (VMC) and Instrument Meteorological Conditions (IMC), informing strategies for safer operations.  
+
+---
+
+### Tools and Methods  
+- **Data Processing**: Used **pandas** to clean, aggregate, and analyze the dataset effectively.  
+- **Visualization**: Employed **Matplotlib** and **Seaborn** to create clear and impactful visualizations tailored for non-technical stakeholders.  
+
+These analyses laid the groundwork for actionable recommendations, ensuring that the business's aviation expansion is based on robust, data-driven insights.
+
+
+
+## Trend Analysis 
+
+The below line chart shows the count of accidents over the years, with the most count of accidents being in 1982.
+
+![Image A](Images/A.png)
+
+## Bar plot showing the count of total fatal and non-fatal injuries through out the years
+
+![Image B](Images/B.png)
+
+## Bar plot showing the count of accidents by top 35 aircaft make
+
+![Image C](Images/C.png)
+
+###  Insights
+- **Cessna and Piper dominate** the accident dataset. This is likely a result of their popularity and widespread usage in general aviation and training, which increases exposure to accidents.
+- The presence of manufacturers like **Boeing** and **Bell** suggests the dataset includes a mix of commercial airliners and specialized aircraft like helicopters.
+- The smaller accident numbers for less common manufacturers, such as **Taylorcraft** and **Luscombe**, could be due to their limited production and operation scale.
+
+Overall, the distribution of accident counts aligns with the operational scale and popularity of these aircraft, with more commonly used makes experiencing higher accident counts.
+
+
+
+##  Bar chart showing the top 35 aircraft make and model combinations with the highest number of accidents
+
+![Image D](Images/D.png)
+
+## Horizontal Bar graphs showing the accident count of 10 Common aircraft make grouped by model
+
+
+![Image E](Images/E.png)
+
+![Image F](Images/F.png)
+
+![Image G](Images/G.png)
+
+![Image H](Images/H.png)
+
+![Image I](Images/I.png)
+
+![Image J](Images/J.png)
+
+![Image K](Images/K.png)
+
+
+
+
+### Recommendations for Popular Aircraft Models Based on Accident Counts
+
+#### Models to Avoid (Higher Accident Counts)
+To reduce risk, the following aircraft models with higher accident counts should be avoided:
+
+- **Cessna Models**:  
+  - 152, 172, 172N, 150, 172M, 172P, 182, 180, 150M  
+
+- **Piper Models**:  
+  - PA-28-140, PA-18, PA-18-150, PA-28-180, PA-28-161, PA-28-181, PA-38-112  
+
+- **Beech Models**:  
+  - A36, 58, C23, V35B, 35, 95-B55, F33A, 23  
+
+- **Boeing Models**:  
+  - 737, A75N1, B75N1, E75, 737-200, A75N1(PT17)  
+
+- **Bell Models**:  
+  - 206B, 206, 206L-1, 407, 47G, 206L-3  
+ 
+
+
+#### Models to Consider (Lower Accident Counts)
+Aircraft models with lower accident counts are recommended for safer operations.
+
+- **Cessna Models**:  
+  - T210L, 208B, P210N, 182A
+
+- **Piper Models**:  
+  - PA-22-108, PA-32R-301T
+  
+- **Beech Models**:  
+  - A23-24 , 95-C55
+  
+- **Boeing Models**:  
+  - 747-422
+
+- **Bell Models**:  
+  - 430, 222
+
+- **Gulfstream Models**: 
+  - 550, 680T, 500S
+
+- **Airbus Models**: 
+  - 330, 321, A319-132, A321-211, AS-350
+ 
+  
+
+
+## Bar chart showing Total Fatal Injuries by  top 35 Aircraft Makes 
+
+![Image L](Images/L.png)
+
+## Bar chart showing Total Fatal Injuries by Top 35 Make-Model Combinations 
+
+
+![Image M](Images/M.png)
+
+
+
+### Aircraft Models to Avoid by Make since the have a high fatality count
+
+#### Boeing       
+- 737-200, 747-168, 747-121, 747-131, 747-200, 747-300, 757-200, 767-200ER, 767-366-ER, 707  
+
+#### Cessna
+- 152, 172, 172N, 172M, 172P  
+
+#### Piper
+- PA-28-140, PA-28-161, PA-28-180, PA-28-181, PA-28R-200, PA-31-350, PA-32-300, PA-23-250  
+
+#### Airbus Industrie
+- A30084-605R, A320, A320-233,A310  
+
+#### Tupolev
+- TU-154  
+
+#### Douglas
+- DC-8-63, DC-8-62, MD-11  
+
+#### McDonnell Douglas
+- DC-9-32, MD-82  
+
+#### Beech
+- A36  
+
+#### Bell
+- 206B  
+  
+
+## Top 20 total serious injuries by make
+
+![Image N](Images/N.png)
+
+
+## Top 20 total serious injuries by make and model
+
+![Image O](Images/O.png)
+
+**The above aircraft makes and models should be avoided at all cost, they still appear under aircraft Models and makes to Avoid by Total Fatal injuries.**
+
+## Bar chart showing Count of accidents by engine type
+
+![Image P](Images/P.png)
+
+
+### Insights from the Bar Chart: Engine Types and Accident Counts
+
+ **Key Finding:**  
+Aircraft equipped with **Reciprocating engines** have the **highest count of accidents** compared to other engine types.
+
+---
+
+### Focus on Major Engine Types in Commercial Aviation  
+The chart highlights accident counts across the **four major engine types** commonly found in commercial airplanes:
+
+1. **Reciprocating Engines**   
+   - Highest accident count, signaling the need for deeper analysis and improved safety measures.  
+
+2. **Turbo Shaft Engines**   
+   - Typically found in helicopters; exhibits a moderate level of accident occurrences.  
+
+3. **Turbo Prop Engines**   
+   - Used in smaller regional aircraft; shows lower accident counts compared to reciprocating engines.  
+
+4. **Turbo Fan Engines**   
+   - Found in large commercial jets; demonstrates a relatively low accident rate, reflecting advanced safety standards.  
+
+---
+
+### Takeaway:  
+This data emphasizes the need for targeted safety measures and maintenance practices, particularly for **reciprocating engine aircraft**, to reduce accident rates.
+
+
+## Bar chart showing the count of accidents grouped by number of engines:
+
+![Image Q](Images/Q.png)
+
+**The above bar chart shows that most aircrafts with only one engine have the highest number of accidents.**
+
+## Bar charts showing the accident counts by make & model engine type
+
+![Image R](Images/R.png)
+
+
+## Recommended Aircraft by Engine Type Based on Lowest Accident Counts
+
+Based on the bar charts, the following aircraft makes and models are recommended for purchase, as they have the least number of accidents for their respective engine types:
+
+---
+
+###  **Reciprocating Engine**
+- Piper PA-23-250
+- Cessna 177
+- Piper PA-32-300
+
+
+
+###  **Turbo Shaft Engine**
+- McDonnell Douglas Helicopter 369E
+- Bell 206BIII
+- Sikorsky S-76A
+
+
+
+###  **Turbo Prop Engine**
+- Beech 99
+- Cessna 425
+
+
+###  **Turbo Fan Engine**
+- Cessna 560XL 
+- Boeing 737-7H4  
+- Boeing 747-400 
+- McDonnell Douglas DC-9-82  
+- McDonnell Douglas DC-10-30  
+- Boeing 757-222  
+- Cessna 525A  
+- Boeing 767
+
+
+## Bar charts showing the accident counts by make & model number of engines
+
+![Image S](Images/S.png)
+
+
+##  Recommended Aircraft by Engine Number Based on Lowest Accident Counts
+
+Based on the bar charts, the following aircraft makes and models are recommended for purchase, as they have the **least number of accidents** for their respective engine configurations:
+
+
+
+###  **Single Engine Aircraft**  
+- Piper PA-24-250
+- Cessna 177
+- Piper PA-32-300  
+
+
+
+###  **Twin Engine Aircraft**  
+- Cessna 414A  
+- Piper PA-31  
+
+
+
+###  **Triple Engine Aircraft**  
+- Boeing 727-251
+- Douglas DC-10-30  
+
+
+
+
+
+### Bar charts showing accident counts based on two weather conditions
+
+![Image T](Images/T.png)
+
+
+The graph above highlights that most occurrences involve Visual Meteorological Conditions (VMC), with significantly fewer cases for Instrument Meteorological Conditions (IMC).
 
 ## Conclusions
 
-In conclusion, I would recommend that Microsoft release one of the following two movies, each with four specific recommendations that have proven to be successful combinations:
-### Movie Option #1
-* an animated kids fiction movie
-* with a production budget of 75 to 200 million dollars
-* released in June or November
-* containing songs by a high-grossing composer with a track record of successful work in digital animation movies, such as Christophe Beck, Robert Lopez, and Kristen Anderson-Lopez, or Heitor Pereira and Pharrell Williams
+### Recommendations
+Based on the analysis conducted, the following recommendations are proposed for the business:  
+1. **Focus on Low-Risk Aircraft**: Prioritize purchasing aircraft models and makes with lower accident counts and minimal severe outcomes, such as fatalities or serious injuries, which aligns with the goal of reducing operational risks. They are the following: 
 
-### Movie Option #2
-* a live action/animation super hero movie
-* with a production budget of 200 to 400 million dollars
-* released in April or May
-* directed by a top-grossing director with a history of proven successful superhero movies, such as Anthony Russo, Joe Russo, or Joss Whedon
+### Models to Consider (Lower Accident Counts)
+Aircraft models with lower accident counts are recommended for safer operations.
 
-While the past ten years of data show that this should be a good recipe for success, one limitation is that we are currently in a global pandemic, which has negatively affected many facets of the global economy. The visualizations above displaying movie gross over time clearly show a significant drop in movie gross for this year (2020). However, since movies take quite a bit of time to produce, the expectation is that the market will be trending in the right direction by the time a future movie would be released.
+- **Cessna Models**:  
+  - T210L, 208B, P210N, 182A
 
-In the future, this analysis could be improved by adding additional data as it becomes available. It could also be expanded upon by determining how much money there is to be made on a streaming platform movie release while theaters remain at low audience capacity. 
+- **Piper Models**:  
+  - PA-22-108, PA-32R-301T
+  
+- **Beech Models**:  
+  - A23-24 , 95-C55
+  
+- **Boeing Models**:  
+  - 747-422
 
-## For More Information
+- **Bell Models**:  
+  - 430, 222
 
-Please review my full analysis in [my Jupyter Notebook](./microsoft_movie_analysis.ipynb) or my [presentation](./movie_analysis_slides.pdf).
+- **Gulfstream Models**: 
+  - 550, 680T, 500S
 
-For any additional questions, please contact **Diane Tunnicliffe** at diane.j.tunnicliffe@gmail.com.
+- **Airbus Models**: 
+  - 330, 321, A319-132, A321-211, AS-350
+ 
 
-## Repository Structure
+2. **Engine Type and Configuration**: Invest in aircraft with reliable engine configurations, such as those with turbo-prop & turbo-fan engines, as these were associated with consistent safety records in the analysis. They are the following:
 
 
-```
-├── README.md                        <- The top-level README for reviewers of this project
-├── microsoft_movie_analysis.ipynb   <- Narrative documentation of analysis in Jupyter notebook
-├── movie_analysis_slides.pdf        <- PDF version of project presentation
-├── movie_notebook.pdf               <- PDF version of Jupyter notebook
-├── data                             <- Both sourced externally and generated from code
-└── images                           <- Both sourced externally and generated from code
-```
+---
+
+## Based on engine type
+
+####  **Reciprocating Engine**
+- Piper PA-23-250
+- Cessna 177
+- Piper PA-32-300
+
+
+
+####  **Turbo Shaft Engine**
+- McDonnell Douglas Helicopter 369E
+- Bell 206BIII
+- Sikorsky S-76A
+
+
+
+####  **Turbo Prop Engine**
+- Beech 99
+- Cessna 425
+
+
+####  **Turbo Fan Engine**
+- Cessna 560XL 
+- Boeing 737-7H4  
+- Boeing 747-400 
+- McDonnell Douglas DC-9-82  
+- McDonnell Douglas DC-10-30  
+- Boeing 757-222  
+- Cessna 525A  
+- Boeing 767
+
+## Based on number of Engine(s)
+
+####  **Single Engine Aircraft**  
+- Piper PA-24-250
+- Cessna 177
+- Piper PA-32-300  
+
+
+
+####  **Twin Engine Aircraft**  
+- Cessna 414A  
+- Piper PA-31  
+
+
+
+####  **Triple Engine Aircraft**  
+- Boeing 727-251
+- Douglas DC-10-30  
+
+3. **Operational Planning**: Develop operational strategies that favor Instrument Meteorological Conditions (IMC), as these conditions have significantly fewer accidents compared to  Visual Meteorological Conditions (VMC).
+
+### Limitations
+While the analysis provides actionable insights, there are some limitations to consider:  
+-  Missing or inconsistent data, such as unknown weather conditions or incomplete records, could impact the accuracy of the findings.  
+- External factors, such as pilot experience, maintenance records, or geographical considerations, aircraft year of manufacture were not recorded. 
+  
+
+### Next Steps
+To further improve this project and provide more robust recommendations, I suggest that one should:  
+1. Include additional variables like pilot experience, aircraft age & year of manufacture, and maintenance history to better understand their impact on safety.  
+2. Use a more recent and comprehensive dataset to capture trends in modern aviation safety.  
+3. Use machine learning models to predict the likelihood of accidents based on aircraft features and operational conditions.  
+
+
